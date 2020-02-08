@@ -1,5 +1,5 @@
 import { Component} from '@angular/core';
-import { Producto } from './modules/producto';
+import { Producto } from './models/producto';
 
 @Component({
   selector: 'app-root',
@@ -7,7 +7,7 @@ import { Producto } from './modules/producto';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
- 
+
   arrComida: Producto[];
   arrBebida: Producto[];
   arrPedido:Producto[];
@@ -20,7 +20,7 @@ export class AppComponent {
       new Producto('comida', 'Taco', 2.5, 'assets/images/Taco.png'),
       new Producto('comida', 'Quesadilla', 2, 'assets/images/Quesadilla.png'),
       new Producto('comida', 'Hamburguesa', 3.5, 'assets/images/Hamburger.png'),
-      
+
     ];
     this.arrBebida = [
       new Producto('bebida', 'Cerveza', 1.5, 'assets/images/Beer.png'),
@@ -29,7 +29,7 @@ export class AppComponent {
       new Producto('bebida', 'Cerveza', 1.5, 'assets/images/Bottle of Water.png'),
       new Producto('bebida', 'Cerveza', 1.5, 'assets/images/Espresso Cup.png'),
       new Producto('bebida', 'Cerveza', 1.5, 'assets/images/Tea.png'),
-      
+
 
     ];
     this.arrPedido=[];

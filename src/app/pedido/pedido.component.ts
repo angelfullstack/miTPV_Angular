@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Producto } from '../modules/producto';
+import { Producto } from '../models/producto';
 
 
 @Component({
