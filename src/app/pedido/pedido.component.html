@@ -1,28 +1,33 @@
 <div class="wrapper">
-   <div class="list">
-        <table>
-            <tr>
-                <th>Producto</th>
-                <th>Unidades</th>
-                <th>Precio</th>
-                <th>Subtotal</th>
-                <th>Añadir</th>
-                <th>Quitar</th>
-            </tr>
-            <tr *ngFor="let producto of listaPedido;let par=even;let impar=odd;">
-                <td>{{producto.nombre}}</td>
-                <td>{{producto.cantidad}}</td>
-                <td>{{producto.precio}}</td>
-                <td>{{producto.precio}}</td>
-                <td><span (click)="aumentarUnidad(producto)">+</span></td>
-                <td><span (click)="quitarUnidad(producto.nombre)">-</span></td>
+  <div class="list">
+    <table>
+      <tr>
+        <th>Producto</th>
+        <th>Unidades</th>
+        <th>Precio</th>
+        <th>Subtotal</th>
+        <th>Añadir</th>
+        <th>Quitar</th>
+      </tr>
+      <tr *ngFor="let producto of listaPedido">
+        <td>{{producto.nombre}}</td>
+        <td>{{producto.cantidad}}</td>
+        <td>{{producto.precio}}</td>
+        <td>{{producto.precio*producto.cantidad}}</td>
+        <td><span (click)="aumentarUnidad(producto)">+</span></td>
+        <td><span (click)="quitarUnidad(producto)">-</span></td>
 
-            </tr>
-        </table>
-        <div class="total">Total:<span>50€</span></div>
-   </div>
-    <button>Confirmar</button>
-    <button>Cancelar</button>
+      </tr>
+      <tr>
+        <td>TOTAL</td>
+        <td colspan="2"></td>
+        <td>{{precioTotal}}</td>
+      </tr>
+
+    </table>
+  </div>
+  <button>Confirmar</button>
+  <button>Cancelar</button>
 
 
 </div>

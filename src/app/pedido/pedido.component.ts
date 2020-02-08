@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Producto } from '../models/producto';
 
 
@@ -9,10 +9,13 @@ import { Producto } from '../models/producto';
 })
 export class PedidoComponent implements OnInit {
   @Input() listaPedido: Producto[];
+  @Input() precioTotal: number;
   totalPedido: Producto[];
-
+  /* He intentado tipar algo así como EventEmitter<Producto,string> pero no me deja. Tampoco EventEmitter[<Producto>,string] */
+  @Output() modificadorCantidad: EventEmitter<any>;
   constructor() {
     this.listaPedido = [];
+    this.modificadorCantidad = new EventEmitter();
   }
 
   ngOnInit() {
@@ -20,8 +23,12 @@ export class PedidoComponent implements OnInit {
   }
 
   aumentarUnidad(producto) {
+    this.modificadorCantidad.emit([producto, 'sumar']);
   }
   quitarUnidad(producto) {
+    this.modificadorCantidad.emit([producto, 'quitar']);
   }
+
+
 
 }

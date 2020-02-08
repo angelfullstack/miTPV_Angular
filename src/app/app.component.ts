@@ -12,6 +12,7 @@ export class AppComponent {
   arrComida: Producto[];
   arrBebida: Producto[];
   arrPedido: Producto[];
+  precioTotal: number;
 
   constructor() {
     this.arrComida = [
@@ -34,18 +35,17 @@ export class AppComponent {
 
     ];
     this.arrPedido = [];
+    this.precioTotal = 0;
 
   }
 
   recibirProducto(productoRecibido) {
     if (this.buscarRepetidos(productoRecibido)) {
-      console.log('Repetido');
       this.aumentarCantidad(productoRecibido);
     } else {
-      console.log('No repetido');
       this.arrPedido.push(productoRecibido);
     }
-    console.log(this.arrPedido)
+    this.actualizarTotal();
   }
 
   buscarRepetidos(productoRecibido) {
@@ -56,18 +56,41 @@ export class AppComponent {
       }
       /* else{
         repetido = false;
-      } *//* En realidad no hace falta este else, pero no entiendo porqué hace que si se hace un pedido de un producto A luego otro B y de nuevo un A, no detecta la repetición */
+      } */
+      // tslint:disable-next-line: max-line-length
+      /* En realidad no hace falta este else, pero no entiendo porqué hace que si se hace un pedido de un producto A luego otro B y de nuevo un A, no detecta la repetición */
     }
-    console.log('Repetido es ' + repetido);
     return repetido;
   }
 
-  aumentarCantidad(productoRecibido){
-    for(const producto of this.arrPedido){
+  aumentarCantidad(productoRecibido) {
+    for (const producto of this.arrPedido) {
       if (productoRecibido.nombre === producto.nombre) {
-        producto.cantidad+=1;
+        producto.cantidad += 1;
       }
     }
 
+  }
+
+  modificarCantidad(productoValor) {
+    const indice = this.arrPedido.indexOf(productoValor[0])
+    const cantidad = this.arrPedido[indice].cantidad;
+    if (productoValor[1] === 'quitar' && cantidad > 1) {
+      this.arrPedido[indice].cantidad--;
+    } else if (productoValor[1] === 'quitar' && cantidad === 1) {
+      this.arrPedido.splice(indice, 1);
+    } else if (productoValor[1] === 'sumar') {
+      this.arrPedido[indice].cantidad++;
+    }
+    this.actualizarTotal();
+  }
+
+  actualizarTotal() {
+    let precioTotal: number;
+    precioTotal = 0;
+    for (const producto of this.arrPedido) {
+      precioTotal += producto.precio * producto.cantidad;
+    }
+    this.precioTotal = precioTotal;
   }
 }
