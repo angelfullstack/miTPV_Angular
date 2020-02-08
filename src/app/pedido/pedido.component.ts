@@ -16,15 +16,12 @@ export class PedidoComponent implements OnInit {
   }
 
   ngOnInit() {
+    console.log(this.listaPedido)
   }
 
   aumentarUnidad(producto) {
-    console.log(producto);
   }
   quitarUnidad(producto) {
-    console.log(producto);
   }
-  contarRepetidos(producto) {
-    console.log(producto);
-  }
+
 }

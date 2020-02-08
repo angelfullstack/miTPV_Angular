@@ -9,9 +9,9 @@
                 <th>Añadir</th>
                 <th>Quitar</th>
             </tr>
-            <tr *ngFor="let producto of listaPedido;let par=even;let impar=odd;let repe=repeated" (change)="contarRepetidos(producto)">
+            <tr *ngFor="let producto of listaPedido;let par=even;let impar=odd;">
                 <td>{{producto.nombre}}</td>
-                <td>1</td>
+                <td>{{producto.cantidad}}</td>
                 <td>{{producto.precio}}</td>
                 <td>{{producto.precio}}</td>
                 <td><span (click)="aumentarUnidad(producto)">+</span></td>
@@ -23,6 +23,6 @@
    </div>
     <button>Confirmar</button>
     <button>Cancelar</button>
-    
+
 
 </div>

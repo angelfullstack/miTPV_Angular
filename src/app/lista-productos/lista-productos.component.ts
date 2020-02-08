@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { Producto } from '../modules/producto';
+import { Producto } from '../models/producto';
 @Component({
   selector: 'app-lista-productos',
   templateUrl: './lista-productos.component.html',
@@ -14,10 +14,10 @@ export class ListaProductosComponent implements OnInit {
   }
 
   ngOnInit() {
+
   }
 
   enviarProducto(producto){
-   console.log(producto);
    this.productoSeleccionado.emit(producto);
   }
 
