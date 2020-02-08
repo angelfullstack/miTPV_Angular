@@ -1,0 +1,11 @@
+<div class="wrapper">
+    <h2>{{titulo}}</h2>
+    <div class="flex">
+        <div class="comida-item" *ngFor="let producto of productos" (click)=enviarProducto(producto)>
+            
+                <div class="imgCont"><img src="{{producto.imagen}}" alt=""></div>
+                <h3>{{producto.nombre}}</h3>
+           
+        </div>
+    </div>
+</div>

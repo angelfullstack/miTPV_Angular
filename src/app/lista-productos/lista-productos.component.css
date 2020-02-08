@@ -1,0 +1,87 @@
+* {
+}
+
+body {
+    
+}
+
+.wrapper {
+    width: 100%;
+    background: #5599dd;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.wrapper h2 {
+    padding-top:.5em;
+    text-align: center;
+    margin: 0;
+    color: #fafafa;
+}
+.wrapper h2::after{
+    content:'';
+    display:block;
+    border-top:.2em solid #fafafa;
+    border-radius:1em;
+    margin:0 auto;
+    width:90%;
+}
+
+
+.flex {
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+    padding: 1rem 3rem;
+    justify-content: space-around;
+    align-content: space-around;
+}
+
+.comida-item {
+    border-radius: 1rem;
+    background: #fafafa;
+    box-shadow: 3px 3px 1px #0008;
+    width: 25%;
+    height: 6rem;
+    padding: 1rem;
+    margin: 1em 1em;
+    transition: .25s;
+}
+
+.comida-item:hover {
+    box-shadow: 3px 3px 0px #0008, 0px 0px 20px #ffffcacc;
+    ;
+}
+
+.comida-item:active {
+    box-shadow: 3px 3px 0px #0008 inset;
+}
+
+.comida-item h3 {
+    text-align: center;
+    margin: 0;
+    font-size: 1rem;
+}
+
+.imgCont {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.imgCont img {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    
+}

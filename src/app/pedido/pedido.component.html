@@ -1,0 +1,28 @@
+<div class="wrapper">
+   <div class="list">
+        <table>
+            <tr>
+                <th>Producto</th>
+                <th>Unidades</th>
+                <th>Precio</th>
+                <th>Subtotal</th>
+                <th>Añadir</th>
+                <th>Quitar</th>
+            </tr>
+            <tr *ngFor="let producto of listaPedido;let par=even;let impar=odd;let repe=repeated" (change)="contarRepetidos(producto)">
+                <td>{{producto.nombre}}</td>
+                <td>1</td>
+                <td>{{producto.precio}}</td>
+                <td>{{producto.precio}}</td>
+                <td><span (click)="aumentarUnidad(producto)">+</span></td>
+                <td><span (click)="quitarUnidad(producto.nombre)">-</span></td>
+
+            </tr>
+        </table>
+        <div class="total">Total:<span>50€</span></div>
+   </div>
+    <button>Confirmar</button>
+    <button>Cancelar</button>
+    
+
+</div>
