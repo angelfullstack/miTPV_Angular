@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { Producto } from './models/producto';
-import { element } from 'protractor';
-
+import { Pedido } from './models/pedido';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -12,7 +11,9 @@ export class AppComponent {
   arrComida: Producto[];
   arrBebida: Producto[];
   arrPedido: Producto[];
+  arrPedidos: Pedido[];
   precioTotal: number;
+  id: number;
 
   constructor() {
     this.arrComida = [
@@ -35,7 +36,9 @@ export class AppComponent {
 
     ];
     this.arrPedido = [];
+    this.arrPedidos = [];
     this.precioTotal = 0;
+    this.id = 1;
 
   }
 
@@ -92,5 +95,14 @@ export class AppComponent {
       precioTotal += producto.precio * producto.cantidad;
     }
     this.precioTotal = precioTotal;
+  }
+
+  confirmarPedido(pedido) {
+    let guardarPedido: Pedido;
+    guardarPedido = new Pedido(this.id, pedido)
+    this.arrPedidos.push(guardarPedido);
+    console.log(this.arrPedidos);
+    this.id++;
+
   }
 }

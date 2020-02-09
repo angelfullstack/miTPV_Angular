@@ -1,4 +1,5 @@
 <div class="wrapper">
+  <header><h1>Mi TPV</h1></header>
   <div class="flex">
     <div class="column">
       <app-lista-productos titulo="Comida" [productos]="arrComida" (productoSeleccionado)="recibirProducto($event)"></app-lista-productos>
@@ -6,7 +7,7 @@
       <app-lista-productos titulo="Bebida" [productos]="arrBebida" (productoSeleccionado)="recibirProducto($event)">
       </app-lista-productos>
     </div>
-    <div class="column"><app-pedido [listaPedido]="arrPedido" [precioTotal]="precioTotal" (modificadorCantidad)="modificarCantidad($event)"></app-pedido></div>
+    <div class="column"><app-pedido [listaPedido]="arrPedido" [precioTotal]="precioTotal" (modificadorCantidad)="modificarCantidad($event)" (confirmacionPedido)="confirmarPedido($event)"></app-pedido></div>
   </div>
 </div>
 

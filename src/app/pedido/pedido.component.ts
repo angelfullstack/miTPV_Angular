@@ -1,6 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter, DoCheck } from '@angular/core';
 import { Producto } from '../models/producto';
-import { runInThisContext } from 'vm';
 
 
 @Component({
@@ -12,16 +11,16 @@ export class PedidoComponent implements OnInit {
   @Input() listaPedido: Producto[];
   @Input() precioTotal: number;
   totalPedido: Producto[];
-  listaVacia: string[];
   longitudPedido: number;
   /* He intentado tipar algo así como EventEmitter<Producto,string> pero no me deja. Tampoco EventEmitter[<Producto>,string] */
   @Output() modificadorCantidad: EventEmitter<any>;
+  @Output() confirmacionPedido: EventEmitter<string>;
   constructor() {
     this.listaPedido = [];
     this.modificadorCantidad = new EventEmitter();
-    this.listaVacia = [];
-    this.listaVacia[10] = '';
+
     this.longitudPedido = 0;
+    this.confirmacionPedido = new EventEmitter();
 
   }
 
@@ -43,6 +42,17 @@ export class PedidoComponent implements OnInit {
   }
   quitarUnidad(producto) {
     this.modificadorCantidad.emit([producto, 'quitar']);
+  }
+
+  confirmarPedido(valor) {
+    this.confirmacionPedido.emit(valor);
+    this.cancelarPedido();
+
+  }
+  cancelarPedido(){
+    /* si se hace this.listaPedido=[] no vuelve a pintarse */
+    this.listaPedido.splice(0,this.listaPedido.length);
+    this.precioTotal=0;
   }
 
 }

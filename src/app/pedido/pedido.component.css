@@ -1,18 +1,11 @@
-.wrapper {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 90%;
-  margin: 0 auto;
-}
+h2 {}
 
 .pedido {
-  width: 100%;
-  box-shadow: 25px 25px 15px #0005;
+  width: 90%;
+  margin: 2rem auto 0;
+  box-shadow: 15px 15px 15px #0005;
   border-radius: 1rem;
   overflow: hidden;
-  background: green;
 }
 
 .pedido .fila {
@@ -26,34 +19,58 @@
   text-align: center;
 }
 
-.pedido .fila.listaCabecera {
-  font-size: 1.5rem;
+.pedido .fila button {
+  width: 60%;
+  margin: 0 auto;
+}
+
+.pedido .fila button, .botones button {
+  background: #8bc34a;
+  border: 2px solid #fafafa;
+  color: #fafafa;
+  border-radius: .5em;
+  outline: none;
+}
+
+.pedido .fila button {
+  width: 60%;
+  margin: 0 auto;
+  padding: .065em .5em;
+}
+
+.pedido .fila span:last-child button, .botones button:nth-child(2) {
+  background: #f44336;
+}
+
+.pedido .fila.listaCabecera, .pedido .fila.total {
+  font-size: 1.125rem;
   background: #ffee58;
-  padding: .25em;
+  padding: .25em 1em .25em .25em;
+  font-weight: bold;
 }
 
 .pedido .lista {
   font-size: 1.125;
-  height: 15em;
-  background: #bbdefb;
+  height: 10em;
+  /* 24em */
+  background: #fafafa;
   overflow-y: scroll;
+
 }
 
-.pedido .lista .fila {
+.pedido .lista>div>div.fila {
   padding: .25em;
-  border-bottom:.125em solid #fafafa;
+  border-bottom: .125em solid #fafafa;
+  background: #64b5f6;
 }
 
-.pedido .lista .unidad:nth-of-type(2n) {
+.pedido .lista>div>div.fila:nth-child(2n) {
   background: #64b5f6;
   color: red;
 }
 
 .pedido .fila.total {
   justify-content: space-between;
-  font-size: 1.5rem;
-  background: #ffee58;
-  padding: .5em;
 }
 
 .pedido .fila.total span:first-child {
@@ -62,23 +79,19 @@
 
 .botones {
   text-align: center;
-  margin-top: 3rem;
+  margin-top: 2rem;
 }
 
 .botones button {
   margin: 0 3rem;
-  font-family: 'Fredoka One', cursive;
-  font-size: 1.5rem;
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.125rem;
   padding: .5em 1em;
-  background: #8bc34a;
-  border: 2px solid #fafafa;
-  color: #fafafa;
-  border-radius: .5em;
-  box-shadow: 25px 25px 15px #0005;
+  box-shadow: 15px 15px 15px #0005;
 }
 
-.botones button:nth-child(2) {
-  background: #f44336;
+.botones button:hover {
+  box-shadow: 15px 15px 15px #0002, 0px 0px 20px #ffffcacc;
 }
 
 /* .wrapper .list {}

@@ -1,18 +1,31 @@
-@import url('https://fonts.googleapis.com/css?family=Fredoka+One&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lobster|Nunito:400,700&display=swap');
 * {
   box-sizing: border-box;
 }
 
-::-webkit-scrollbar {
-  display: none;
-}
 
-html {
-  scrollbar-width: none;
-}
 
 body {
-  font-family: 'Fredoka One', cursive;
+  font-family: 'Nunito', sans-serif;
   background: #42a5f5;
-  color:#1c1c1c;
+  color: #1c1c1c;
+  height: 100vh;
+  overflow: hidden;
+}
+
+h2 {
+  font-size: 2rem;
+  padding-top: .5em;
+  text-align: center;
+  margin: 0;
+  color: #fafafa;
+}
+
+ h2::after {
+  content: '';
+  display: block;
+  border-top: .2em solid #ffee58;
+  border-radius: 1em;
+  margin: 0 auto;
+  width: 90%;
 }
