@@ -1,11 +1,87 @@
 .wrapper {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  margin: 0 auto;
 }
 
-.wrapper .list {}
+.pedido {
+  width: 100%;
+  box-shadow: 25px 25px 15px #0005;
+  border-radius: 1rem;
+  overflow: hidden;
+  background: green;
+}
+
+.pedido .fila {
+  display: flex;
+  width: 100%;
+}
+
+.pedido .fila span {
+  display: block;
+  width: 16.66%;
+  text-align: center;
+}
+
+.pedido .fila.listaCabecera {
+  font-size: 1.5rem;
+  background: #ffee58;
+  padding: .25em;
+}
+
+.pedido .lista {
+  font-size: 1.125;
+  height: 15em;
+  background: #bbdefb;
+  overflow-y: scroll;
+}
+
+.pedido .lista .fila {
+  padding: .25em;
+  border-bottom:.125em solid #fafafa;
+}
+
+.pedido .lista .unidad:nth-of-type(2n) {
+  background: #64b5f6;
+  color: red;
+}
+
+.pedido .fila.total {
+  justify-content: space-between;
+  font-size: 1.5rem;
+  background: #ffee58;
+  padding: .5em;
+}
+
+.pedido .fila.total span:first-child {
+  width: 50%;
+}
+
+.botones {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.botones button {
+  margin: 0 3rem;
+  font-family: 'Fredoka One', cursive;
+  font-size: 1.5rem;
+  padding: .5em 1em;
+  background: #8bc34a;
+  border: 2px solid #fafafa;
+  color: #fafafa;
+  border-radius: .5em;
+  box-shadow: 25px 25px 15px #0005;
+}
+
+.botones button:nth-child(2) {
+  background: #f44336;
+}
+
+/* .wrapper .list {}
 
 .wrapper table {
     width: 100%;
@@ -14,6 +90,7 @@
     margin: 0;
     padding: 0;
     scrollbar-width: none;
+    height: 500px;
 }
 
 .wrapper table::-webkit-scrollbar {
@@ -31,3 +108,12 @@
 .wrapper tr:nth-child(even) {
     background: blue;
 }
+.wrapper tr:last-child{
+  background: red;
+}
+
+.wrapper td{
+  text-align: center;
+  padding:.25em .5em;
+}
+ */

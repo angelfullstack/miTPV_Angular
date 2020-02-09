@@ -6,10 +6,9 @@
     display:flex;
     flex-wrap: nowrap;
     width:100%;
-    background:green;
 }
 
 .column{
     position:relative;
     width:50%;
-background:red;}
+}

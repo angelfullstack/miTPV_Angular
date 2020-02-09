@@ -1,6 +1,39 @@
 <div class="wrapper">
-  <div class="list">
-    <table>
+  <div class="pedido">
+    <div class="fila listaCabecera">
+      <span>Producto</span>
+      <span>Unidades</span>
+      <span>Precio</span>
+      <span>Subtotal</span>
+      <span>Añadir</span>
+      <span>Quitar</span>
+    </div>
+    <div class="lista">
+      <div *ngFor="let producto of listaPedido">
+        <div class="fila unidad">
+          <span>{{producto.nombre}}</span>
+          <span>{{producto.cantidad}}</span>
+          <span>{{producto.precio}}</span>
+          <span>{{producto.precio*producto.cantidad}}</span>
+          <span (click)="aumentarUnidad(producto)">+</span>
+          <span (click)="quitarUnidad(producto)">-</span>
+        </div>
+      </div>
+    </div>
+    <div class="fila total">
+      <span>TOTAL:</span>
+      <span>{{precioTotal}}</span>
+      <span></span>
+      <span></span>
+
+    </div>
+  </div>
+
+    <div class="botones">
+      <button>Confirmar</button>
+      <button>Cancelar</button>
+    </div>
+    <!-- <table>
       <tr>
         <th>Producto</th>
         <th>Unidades</th>
@@ -18,16 +51,16 @@
         <td><span (click)="quitarUnidad(producto)">-</span></td>
 
       </tr>
+      <tr *ngFor="let elemento of listaVacia">
+        <td colspan="6"></td>
+      </tr>
+
       <tr>
         <td>TOTAL</td>
         <td colspan="2"></td>
         <td>{{precioTotal}}</td>
       </tr>
 
-    </table>
+    </table> -->
+
   </div>
-  <button>Confirmar</button>
-  <button>Cancelar</button>
-
-
-</div>
