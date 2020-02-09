@@ -13,6 +13,7 @@ export class AppComponent {
   arrPedido: Producto[];
   arrPedidos: Pedido[];
   precioTotal: number;
+  ventasTotales:number;
   id: number;
 
   constructor() {
@@ -36,9 +37,12 @@ export class AppComponent {
 
     ];
     this.arrPedido = [];
-    this.arrPedidos = [];
+    this.arrPedidos = [
+      new Pedido(1, 0),
+    ];
     this.precioTotal = 0;
-    this.id = 1;
+    this.id = 2;
+    this.ventasTotales=0;
 
   }
 
@@ -103,6 +107,17 @@ export class AppComponent {
     this.arrPedidos.push(guardarPedido);
     console.log(this.arrPedidos);
     this.id++;
+    this.actualizarTotalVentas();
 
+  }
+
+  actualizarTotalVentas() {
+    let ventasTotales: number;
+    ventasTotales = 0;
+    for (const pedido of this.arrPedidos) {
+      ventasTotales+= pedido.total;
+
+    }
+    this.ventasTotales= ventasTotales;
   }
 }

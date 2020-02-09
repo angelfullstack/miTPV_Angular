@@ -45,14 +45,16 @@ export class PedidoComponent implements OnInit {
   }
 
   confirmarPedido(valor) {
-    this.confirmacionPedido.emit(valor);
-    this.cancelarPedido();
+    if (valor !== 0) {
+      this.confirmacionPedido.emit(valor);
+      this.cancelarPedido();
+    }
 
   }
-  cancelarPedido(){
+  cancelarPedido() {
     /* si se hace this.listaPedido=[] no vuelve a pintarse */
-    this.listaPedido.splice(0,this.listaPedido.length);
-    this.precioTotal=0;
+    this.listaPedido.splice(0, this.listaPedido.length);
+    this.precioTotal = 0;
   }
 
 }

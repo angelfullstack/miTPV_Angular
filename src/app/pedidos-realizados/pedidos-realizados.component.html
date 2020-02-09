@@ -1,1 +1,21 @@
-<p>pedidos-realizados works!</p>
+<div class="wrapper">
+  <h2>Pedidos Realizados</h2>
+  <div class="pedido">
+    <div class="fila listaCabecera">
+      <span>Id Pedido</span>
+      <span>Valor venta</span>
+    </div>
+    <div class="lista">
+      <div *ngFor="let pedido of listaPedidos;">
+        <div class="fila unidad">
+          <span>{{pedido.id}}</span>
+          <span>{{pedido.total}}€</span>
+        </div>
+      </div>
+    </div>
+    <div class="fila total">
+      <span>TOTAL VENTAS:</span>
+      <span>{{valorVentas}}</span>
+    </div>
+  </div>
+</div>

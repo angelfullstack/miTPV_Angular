@@ -7,7 +7,10 @@
       <app-lista-productos titulo="Bebida" [productos]="arrBebida" (productoSeleccionado)="recibirProducto($event)">
       </app-lista-productos>
     </div>
-    <div class="column"><app-pedido [listaPedido]="arrPedido" [precioTotal]="precioTotal" (modificadorCantidad)="modificarCantidad($event)" (confirmacionPedido)="confirmarPedido($event)"></app-pedido></div>
+    <div class="column">
+      <app-pedido [listaPedido]="arrPedido" [precioTotal]="precioTotal" (modificadorCantidad)="modificarCantidad($event)" (confirmacionPedido)="confirmarPedido($event)"></app-pedido>
+      <app-pedidos-realizados [listaPedidos]="arrPedidos" [valorVentas]="ventasTotales"></app-pedidos-realizados>
+    </div>
   </div>
 </div>
 
